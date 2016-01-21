@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Auth0.Windows.UWP</id>
+    <version>1.0.0</version>
+    <title>Auth0 Login Client for UWP applications</title>
+    <authors>Jerrie Pelser</authors>
+    <owners>Jerrie Pelser, Nathan Totten</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/auth0/Auth0.Windows.UWP</projectUrl>
+    <iconUrl>http://secure.gravatar.com/avatar/805765c256ff8617fcad483b5476faf2</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Easily provide an Auth0 login user interface for your Universal Windows Applications</description>
+    <releaseNotes>Initial beta release.</releaseNotes>
+    <copyright>Copyright 2016, Auth0</copyright>
+    <tags>auth0 uwp winrt authentication login</tags>
+     <dependencies>
+      <group targetFramework="uap10.0">
+        <dependency id="Newtonsoft.Json" version="8.0.2" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\src\Auth0.LoginClient.Cs\bin\Release\Auth0.LoginClient.dll" target="lib\uap10.0" />
+    <file src="..\src\Auth0.LoginClient.Cs\bin\Release\Auth0.LoginClient.pdb" target="lib\uap10.0" />
+    <file src="..\src\Auth0.LoginClient.Cs\bin\Release\Auth0.LoginClient.xml" target="lib\uap10.0" />
+    <file src="..\src\Auth0.LoginClient.Cs\bin\Release\Auth0.LoginClient.pri" target="lib\uap10.0" />
+  </files>
+</package>
