@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LoginClientSample.Js</title>
+
+    <!-- WinJS references -->
+    <link href="WinJS/css/ui-dark.css" rel="stylesheet" />
+    <script src="WinJS/js/base.js"></script>
+    <script src="WinJS/js/ui.js"></script>
+
+    <!-- LoginClientSample.Js references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+    <script src="/js/auth0.js"></script>
+</head>
+<body class="win-type-body">
+    <h1>Auth0 Login Samples</h1>
+
+    <h2>Login using widget</h2>
+    <p>
+        <button id="loginButton">Login</button>
+    </p>
+
+    <h2>Login using a specific connection</h2>
+    <p>
+        Connection
+    </p>
+    <p>
+        <input type="text" id="connectionName" value="google-oauth2" />
+    </p>
+    <p>
+        <button id="loginWithConnectionButton">Login</button>
+    </p>
+
+    <h2>Login using a connection, username and password (Custom UI)</h2>
+    <p>
+        <input type="text" id="dbConnectionName" value="Username-Password-Authentication" />
+    </p>
+    <p>
+        <input type="text" id="username" value="jdoe@foobar.com" />
+    </p>
+    <p>
+        <input type="password" id="password" />
+    </p>
+    <p>
+        <button id="loginCustomButton">Login</button>
+    </p>
+
+    <h2>Profile:</h2>
+    <div id="profileDisplayArea">(Log in to see user's profile displayed here)</div>
+</body>
+</html>

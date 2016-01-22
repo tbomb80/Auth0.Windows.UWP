@@ -15,7 +15,7 @@
             </Grid>
         </StackPanel>
         <StackPanel>
-            <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}">Login using a Connection (no Widget)</TextBlock>
+            <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}">Login using a specific Connection</TextBlock>
             <Grid Margin="0,10">
                 <StackPanel Orientation="Vertical">
                     <Grid Margin="10">
@@ -31,7 +31,7 @@
             </Grid>
         </StackPanel>
         <StackPanel >
-            <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}">Login using a Connection (no Widget)</TextBlock>
+            <TextBlock Style="{ThemeResource SubheaderTextBlockStyle}">Login using a Connection, Username and Password</TextBlock>
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
