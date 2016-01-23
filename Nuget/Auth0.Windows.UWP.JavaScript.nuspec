@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Auth0.Windows.UWP.JavaScript</id>
+        <version>1.0.0</version>
+        <title>Auth0 Login Client for UWP JavaScript applications</title>
+        <authors>Jerrie Pelser</authors>
+        <owners>Jerrie Pelser, Nathan Totten</owners>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/auth0/Auth0.Windows.UWP</projectUrl>
+        <iconUrl>http://secure.gravatar.com/avatar/805765c256ff8617fcad483b5476faf2</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Easily provide an Auth0 login user interface for your Universal Windows Applications</description>
+        <releaseNotes>Initial release.</releaseNotes>
+        <copyright>Copyright 2016, Auth0</copyright>
+        <tags>auth0 uwp winrt authentication login javascript</tags>
+    </metadata>
+    <files>
+        <file src="..\src\js\auth0.js" target="content\js\auth0.js" />
+    </files>
+</package>
