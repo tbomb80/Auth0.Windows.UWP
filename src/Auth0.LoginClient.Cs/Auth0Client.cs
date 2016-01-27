@@ -42,9 +42,34 @@ namespace Auth0.LoginClient
             "offline_mode"
         };
 
+        private DiagnosticsHeader diagnostics;
 
-        public Auth0Client(string domain, string clientId)
+        /// <summary>
+        /// Creates a new instances on the Auth0 login client
+        /// </summary>
+        /// <param name="domain">The domain your want to log in to</param>
+        /// <param name="clientId">The client ID</param>
+        public Auth0Client(string domain, string clientId) 
+            : this(domain, clientId, null)
         {
+        }
+
+        /// <summary>
+        /// Creates a new instances on the Auth0 login client
+        /// </summary>
+        /// <param name="domain">The domain your want to log in to</param>
+        /// <param name="clientId">The client ID</param>
+        /// <param name="diagnostics">The <see cref="DiagnosticsHeader"/> which is sent along with the request. This is used for telemetry by Auth0. To opt out of this, specify a value of DiagnosticsHeader.Suppress</param>
+        public Auth0Client(string domain, string clientId, DiagnosticsHeader diagnostics)
+        {
+            // If no diagnostics header structure was specified, then revert to the default one
+            if (diagnostics == null)
+            {
+                diagnostics = DiagnosticsHeader.Default;
+            }
+
+            this.diagnostics = diagnostics;
+
             this.domain = domain;
             this.clientId = clientId;
             this.DeviceIdProvider = new Device();
@@ -123,6 +148,10 @@ namespace Auth0.LoginClient
                 {"grant_type", "password"},
                 {"scope", scope}
             };
+
+            // Add the diagnostics query string, unless user explicitly opted out of it
+            if (!object.ReferenceEquals(diagnostics, DiagnosticsHeader.Suppress))
+                parameters.Add("auth0client", diagnostics.ToString());
 
             if (scope.Contains("offline_access"))
             {
@@ -348,6 +377,10 @@ namespace Auth0.LoginClient
                     connection,
                     scope)
                 : string.Format(LoginWidgetUrl, this.domain, this.clientId, Uri.EscapeDataString(redirectUri), scope);
+
+            // Add the diagnostics query string, unless user explicitly opted out of it
+            if (!object.ReferenceEquals(diagnostics, DiagnosticsHeader.Suppress))
+                authorizeUri += string.Format("&auth0client={0}", diagnostics.ToString());
 
             if (scope.Contains("offline_access"))
             {
