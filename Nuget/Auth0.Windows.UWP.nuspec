@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Auth0.Windows.UWP</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>Auth0 Login Client for UWP applications</title>
     <authors>Jerrie Pelser</authors>
     <owners>Jerrie Pelser, Nathan Totten</owners>
