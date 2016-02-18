@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
+using Windows.Foundation.Collections;
 using Windows.Security.Authentication.Web;
 using Newtonsoft.Json.Linq;
 
@@ -105,9 +107,26 @@ namespace Auth0.LoginClient
             var auth = await this.GetAuthenticatorAsync(connection, scope, authParams);
             if (auth.ResponseStatus == WebAuthenticationStatus.Success)
             {
-                var tokens = ParseResult(auth.ResponseData);
+                Dictionary<string, string> tokens = ParseResult(auth.ResponseData);
+
                 if (tokens != null)
                 {
+                    if (tokens.ContainsKey("error"))
+                    {
+                        var failureMessage = new StringBuilder();
+                        failureMessage.Append("Error=").Append(tokens["error"]);
+                        if (tokens.ContainsKey("error_description"))
+                        {
+                            failureMessage.Append(";Description=").Append(tokens["error_description"]);
+                        }
+                        if (tokens.ContainsKey("error_uri"))
+                        {
+                            failureMessage.Append(";Uri=").Append(tokens["error_uri"]);
+                        }
+
+                        throw new AuthenticationErrorException(failureMessage.ToString());
+                    }
+
                     this.SetupCurrentUser(tokens);
                     tcs.TrySetResult(this.CurrentUser);
                 }
