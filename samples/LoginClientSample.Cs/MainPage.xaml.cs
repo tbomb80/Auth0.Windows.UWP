@@ -29,25 +29,46 @@ namespace LoginClientSample.Cs
         {
             this.InitializeComponent();
 
-            auth0Client = new Auth0Client("Your domain", "Your client ID");
+            auth0Client = new Auth0Client("", "");
         }
 
         private async void LoginButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var user = await auth0Client.LoginAsync();
-            UserInfoTextBox.Text = user.Profile.ToString();
+            try
+            {
+                var user = await auth0Client.LoginAsync();
+                UserInfoTextBox.Text = user.Profile.ToString();
+            }
+            catch (Exception ex)
+            {
+                UserInfoTextBox.Text = ex.Message;
+            }
         }
 
         private async void LoginWithConnectionButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var user = await auth0Client.LoginAsync(ConnectionNameTextBox.Text);
-            UserInfoTextBox.Text = user.Profile.ToString();
+            try
+            {
+                var user = await auth0Client.LoginAsync(ConnectionNameTextBox.Text);
+                UserInfoTextBox.Text = user.Profile.ToString();
+            }
+            catch (Exception ex)
+            {
+                UserInfoTextBox.Text = ex.Message;
+            }
         }
 
         private async void LoginNoWidgetButton_Click(object sender, RoutedEventArgs e)
         {
-            var user = await auth0Client.LoginAsync(DBConnectionNameTextBox.Text, UsernameTextBox.Text, PasswordTextBox.Password);
-            UserInfoTextBox.Text = user.Profile.ToString();
+            try
+            {
+                var user = await auth0Client.LoginAsync(DBConnectionNameTextBox.Text, UsernameTextBox.Text, PasswordTextBox.Password);
+                UserInfoTextBox.Text = user.Profile.ToString();
+            }
+            catch (Exception ex)
+            {
+                UserInfoTextBox.Text = ex.Message;
+            }
         }
     }
 }
