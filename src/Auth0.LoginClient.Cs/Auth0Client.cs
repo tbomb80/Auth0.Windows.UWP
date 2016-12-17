@@ -391,11 +391,9 @@ namespace Auth0.LoginClient
             scope = WebUtility.UrlEncode(scope);
 
             var redirectUri = this.CallbackUrl;
-            var authorizeUri = !string.IsNullOrWhiteSpace(connection)
-                ? string.Format(AuthorizeUrl, this.domain, this.clientId, Uri.EscapeDataString(redirectUri),
-                    connection,
-                    scope)
-                : string.Format(LoginWidgetUrl, this.domain, this.clientId, Uri.EscapeDataString(redirectUri), scope);
+            var authorizeUri = string.Format(AuthorizeUrl, this.domain, this.clientId, Uri.EscapeDataString(redirectUri),
+                connection,
+                scope);
 
             // Add the diagnostics query string, unless user explicitly opted out of it
             if (!object.ReferenceEquals(diagnostics, DiagnosticsHeader.Suppress))
