@@ -123,13 +123,14 @@ namespace Auth0.LoginClient
             var sdkAssemblyName = sdkAssembly.GetName();
 
             var header = new DiagnosticsHeader(sdkAssemblyName);
-
+#if DOTNET
+#else
             // Set windows version
             header.Environments = new[]
             {
                 new DiagnosticsComponent(Info.SystemFamily, Info.SystemVersion)
             };
-
+#endif
             return header;
         }
 

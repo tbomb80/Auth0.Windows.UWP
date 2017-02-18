@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0388F15D-A04D-443B-A8C7-D8425128E9F2}"
 EndProject
@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Js", "Js", "{FF03D1D9-4243-
 	ProjectSection(SolutionItems) = preProject
 		src\js\auth0.js = src\js\auth0.js
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth0.LoginClient.dotNet", "src\Auth0.LoginClient.dotNet\Auth0.LoginClient.dotNet.csproj", "{4179A44D-A317-4834-96C5-27971AE85F99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,6 +98,22 @@ Global
 		{FA9D9539-24FC-4B5E-A66F-5FABE7893C1A}.Release|x86.ActiveCfg = Release|x86
 		{FA9D9539-24FC-4B5E-A66F-5FABE7893C1A}.Release|x86.Build.0 = Release|x86
 		{FA9D9539-24FC-4B5E-A66F-5FABE7893C1A}.Release|x86.Deploy.0 = Release|x86
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|ARM.Build.0 = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|x64.Build.0 = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Debug|x86.Build.0 = Debug|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|ARM.Build.0 = Release|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|x64.ActiveCfg = Release|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|x64.Build.0 = Release|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|x86.ActiveCfg = Release|Any CPU
+		{4179A44D-A317-4834-96C5-27971AE85F99}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,5 +123,6 @@ Global
 		{3A4145A2-E626-41BE-A396-7E88EC5A9691} = {F8D90026-7353-43C8-8281-5B7BDC294F50}
 		{FA9D9539-24FC-4B5E-A66F-5FABE7893C1A} = {F8D90026-7353-43C8-8281-5B7BDC294F50}
 		{FF03D1D9-4243-4D0E-94DA-A7E8A00C2A6B} = {0388F15D-A04D-443B-A8C7-D8425128E9F2}
+		{4179A44D-A317-4834-96C5-27971AE85F99} = {0388F15D-A04D-443B-A8C7-D8425128E9F2}
 	EndGlobalSection
 EndGlobal

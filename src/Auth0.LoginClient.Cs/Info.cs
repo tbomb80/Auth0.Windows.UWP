@@ -1,4 +1,6 @@
-﻿using Windows.ApplicationModel;
+﻿#if DOTNET
+#else
+using Windows.ApplicationModel;
 using Windows.Security.ExchangeActiveSyncProvisioning;
 using Windows.System.Profile;
 
@@ -50,3 +52,4 @@ namespace Auth0.LoginClient
         }
     }
 }
+#endif

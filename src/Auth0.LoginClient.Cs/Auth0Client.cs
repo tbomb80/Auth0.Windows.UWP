@@ -5,8 +5,11 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+#if DOTNET
+#else
 using Windows.Foundation.Collections;
 using Windows.Security.Authentication.Web;
+#endif
 using Newtonsoft.Json.Linq;
 
 namespace Auth0.LoginClient
@@ -89,6 +92,8 @@ namespace Auth0.LoginClient
         /// </summary>
         public IDeviceIdProvider DeviceIdProvider { get; set; }
 
+#if DOTNET
+#else
         /// <summary>
         /// Login a user into an Auth0 application. Attempts to do a background login, but if unsuccessful shows an embedded browser window either showing the widget or skipping it by passing a connection name
         /// </summary>
@@ -142,7 +147,7 @@ namespace Auth0.LoginClient
 
             return this.CurrentUser;
         }
-
+#endif
         /// <summary>
         ///  Log a user into an Auth0 application given an user name and password.
         /// </summary>
@@ -376,7 +381,8 @@ namespace Auth0.LoginClient
             })
                 .Wait();
         }
-
+#if DOTNET
+#else
         private async Task<WebAuthenticationResult> GetAuthenticatorAsync(string connection, string scope, IDictionary<string, string> authParams)
         {
             // Generate state to include in startUri
@@ -418,7 +424,7 @@ namespace Auth0.LoginClient
 
             return await WebAuthenticationBroker.AuthenticateAsync(WebAuthenticationOptions.None, startUri, endUri);
         }
-
+#endif
         private static bool RequireDevice(string scope)
         {
             return !String.IsNullOrEmpty(scope) && scope.Contains("offline_access");
